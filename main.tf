@@ -14,7 +14,7 @@ EOF
 
   provisioner "local-exec" {
 
-    command = "sleep 60s;chmod 600 anz_demo.pem;ANSIBLE_HOST_KEY_CHECKING False ansible-playbook -u ec2-user -i '${aws_instance.example.public_ip},' --private-key anz_demo.pem playbook.yml"
+    command = "sleep 60s;chmod 600 anz_demo.pem;ANSIBLE_HOST_KEY_CHECKING False ansible-playbook -u ubuntu -i '${aws_instance.example.public_ip},' --private-key anz_demo.pem playbook.yml"
   }
 }
 
